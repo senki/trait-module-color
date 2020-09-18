@@ -1,0 +1,5 @@
+{
+    "compression": "GZ",
+    "main": "command.php",
+    "output": "trait-module-color.phar"
+}

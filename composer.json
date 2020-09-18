@@ -1,0 +1,28 @@
+{
+    "name": "senki/trait-module-color",
+    "description": "A simple command line utility for adding trait/module color information from filename to csv files.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Csaba Maulis",
+            "email": "senki@users.noreply.github.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "league/csv": "^9.6",
+        "symfony/console": "^5.1",
+        "webmozart/path-util": "^2.3"
+    },
+    "suggest": {
+        "humbug/box": "For building PHAR"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.1"
+    }
+}
