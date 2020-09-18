@@ -15,6 +15,7 @@
         }
     },
     "require": {
+        "php": ">=7.2.5",
         "league/csv": "^9.6",
         "symfony/console": "^5.1",
         "webmozart/path-util": "^2.3"
@@ -23,6 +24,16 @@
         "humbug/box": "For building PHAR"
     },
     "require-dev": {
-        "symfony/var-dumper": "^5.1"
+        "phpstan/phpstan": "^0.12.42",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+    },
+    "scripts": {
+        "phpstan": "vendor/bin/phpstan analyse src command.php --level max",
+        "phpcs": "vendor/bin/phpcs -p src command.php",
+        "test": [
+            "@phpcs",
+            "@phpstan"
+        ]
     }
 }

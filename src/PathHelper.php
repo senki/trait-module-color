@@ -33,13 +33,15 @@ class PathHelper
         return is_dir($target);
     }
 
+    /** @return string[] */
     public function collectFromDir(string $target): array
     {
-        if (!$this->isDir($target)) {
-            throw new Exception("Not a directory");
+        $dir = scandir($target);
+        if ($dir == false) {
+            throw new Exception("Can't access the current directory");
         }
         $buffer = [];
-        foreach (scandir($target) as $item) {
+        foreach ($dir as $item) {
             if (in_array($item, ['.', '..'])) {
                 continue;
             }

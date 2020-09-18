@@ -23,8 +23,10 @@ $app->setName('senki/trait-module-color')
         $chunk         = 100;
         $suffix        = '-markers.vip.csv';
         $path          = new PathHelper();
+        /** @var string */
         $inputFilesArg = $input->getArgument('input-files');
         $inputFiles    = $path->isDir($inputFilesArg) ? $path->collectFromDir($inputFilesArg) : [$inputFilesArg];
+        /** @var string */
         $outputFolder  = $input->getArgument('output-folder');
 
         $output->writeln(sprintf('Converting %d file(s)', count($inputFiles)));
